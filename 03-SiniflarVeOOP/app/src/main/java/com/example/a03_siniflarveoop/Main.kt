@@ -30,4 +30,10 @@ fun main() {
     ornekDizi.forEach {
         it.sesCikar()
     }
+
+    // abstraction (Abstract Class, Interface)
+    //val insan = Insan() // hata: Cannot create an instance of an abstract class
+    // test fonksiyonu insan abstract sinifinda (Sanatci : Insan)
+    //sanatci1.test()
+
 }
