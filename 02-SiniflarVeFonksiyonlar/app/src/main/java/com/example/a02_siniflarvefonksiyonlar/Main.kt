@@ -2,6 +2,11 @@ package com.example.a02_siniflarvefonksiyonlar
 
 var x = 0
 
+// lateinit: basic olmayan veri tiplerinde kullanilir
+// daha sonra initialize edecegeim demek
+// kullanimi riskli
+//var insan: Insan // hata (Property must be initialized)
+lateinit var insan: Insan // hata yok
 fun main() {
     birinciFonksiyon()
     cikarma(15, 5)
