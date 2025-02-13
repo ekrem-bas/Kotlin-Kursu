@@ -14,4 +14,20 @@ fun main() {
     val muhKahraman = MuhtesemKahraman("muhKahraman_1", "ucmak")
     muhKahraman.kos()
     muhKahraman.muhtesemFonksiyon()
+
+    // polymorphism
+    // statik polymorphism
+    val islemler = Islemler()
+    println(islemler.cikarma(12, 5))
+    println(islemler.cikarma(12, 5, 3))
+    println(islemler.cikarma(24, 3, 5, 8))
+    println(islemler.cikarma(12.3, 4.9))
+
+    // dinamik polymorphism
+    val kedi = Hayvan()
+    val kopek = Kopek()
+    val ornekDizi = arrayOf(kedi, kopek)
+    ornekDizi.forEach {
+        it.sesCikar()
+    }
 }
