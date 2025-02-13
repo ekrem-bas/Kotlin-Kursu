@@ -8,9 +8,10 @@ class Sanatci(var isim: String, val yas: Int, var enstruman: String) {
     private var tur = "insan" // disaridan erisilemez ve degistirilemez
 
     // encapsulation farkli bir gosterim
+//    var gozRengi = ""
+//        private set // obje uzerinden degistirilemez
+//        public get // obje uzerinden degeri okunabilir
     private var gozRengi = ""
-        private set // obje uzerinden degistirilemez
-        public get // obje uzerinden degeri okunabilir
 
     // java tarzi getter ve setter
     fun setGozRengi(yeniGozRengi: String) {
