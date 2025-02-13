@@ -14,6 +14,46 @@ fun main() {
     println(insan1.isim)
     println(insan1.yas)
 
+    // NULLABLITIY
+    val kullaniciGirdisi = "giris"
+    // giris eger int olabiliyosa o deger olamiyorsa null
+    val kullaniciGirisiInteger = kullaniciGirdisi.toIntOrNull()
+    //println(kullaniciGirisiInteger * 2) // hata (eger null ise nasil 2 ile carpsin)
+
+    if (kullaniciGirisiInteger != null) {
+        println("kullanicinin girdigi sayinin iki kati: ${kullaniciGirisiInteger * 2}")
+    } else {
+        println("kullanici sayisal bir deger girmedi...")
+    }
+
+    var benimDouble: Double? // nullable double tanimi
+    //var benimDouble: Double? = null // nullable degiskenler initialize da edilebilir
+
+    val kullaniciGirdisiDouble = kullaniciGirdisi.toDoubleOrNull()
+
+    // !!
+    // ne olursa olsun bu islemi yap ben null olmadigini garanti ediyorum
+    // uygulama cokebilir
+    //kullaniciGirdisiDouble!!.div(2)
+
+    // ?
+    // eger bu deger null degilse bu islemi yap
+    // her zaman kullanilamayabilir, kullanildiginda uygulama cokmez
+    kullaniciGirdisiDouble?.div(2)
+
+    if (kullaniciGirdisiDouble != null) {
+        println(kullaniciGirdisiDouble / 2)
+    }
+
+    //elvis operatoru
+    // eger ?: dan onceki degisken null degilse onu
+    // null ise ?: dan sonraki degeri dondur
+    println(kullaniciGirdisiDouble?.div(2) ?: 20)
+
+    kullaniciGirdisiDouble?.let {
+        // deger null degilse bu {...} ici calisir
+        println(it * 2)
+    }
 
 }
 
