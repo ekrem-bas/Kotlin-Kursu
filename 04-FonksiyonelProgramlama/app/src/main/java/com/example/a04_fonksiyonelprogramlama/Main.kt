@@ -19,6 +19,22 @@ fun main() {
     val carpmaIkinciVersiyon: (Int, Int) -> Int = { a, b -> a * b }
     println(carpmaIkinciVersiyon(5, 4))
 
+    println("------High Order Functions--------")
+
+    // Filter
+    val benimListem = arrayListOf(1, 3, 5, 7, 9, 11, 13, 15, 17, 19)
+
+    // benimListemdeki 10dan kucuk sayilar
+    val kucukSayilar = benimListem.filter { num -> num < 10 }
+
+    // ayni islemin farkli gosterimi
+    val kucukSayilarYeni = benimListem.filter { it < 10 }
+
+    // Map
+    val karesiAlinmisSayilar = benimListem.map { it * it } // { num -> num * num }
+
+    // Map & Filter
+    val mapFilterBirArada = benimListem.filter { it < 10 }.map { it * it }
 }
 
 fun yazdigimiYazdir(string: String) {
