@@ -35,6 +35,21 @@ fun main() {
 
     // Map & Filter
     val mapFilterBirArada = benimListem.filter { it < 10 }.map { it * it }
+
+    // Siniflarda Map ve Filter kullanimi
+    val sanatcilar = arrayListOf<Sanatci>(
+        Sanatci("sanatci_1", 35, "gitar"),
+        Sanatci("sanatci_2", 32, "bateri"),
+        Sanatci("sanatci_3", 24, "piyano")
+    )
+
+    // 30 yasindan buyuk sanatcilarin enstrumanlari
+    val otuzdanBuyukSanatcilarinEnsturmanlari =
+        sanatcilar.filter { it.yas > 30 }.map { it.ensturman }
+
+    // 33 yasindan kucuk sanatcilarin isimleri
+    val otuzUcYasindanKucukSanatcilar =
+        sanatcilar.filter { it.yas < 33 }.map { it.isim }
 }
 
 fun yazdigimiYazdir(string: String) {
