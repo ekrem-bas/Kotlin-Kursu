@@ -50,6 +50,26 @@ fun main() {
     // 33 yasindan kucuk sanatcilarin isimleri
     val otuzUcYasindanKucukSanatcilar =
         sanatcilar.filter { it.yas < 33 }.map { it.isim }
+
+    // Scope Fonksiyonlari
+    println("------Scope Functions--------")
+
+    // let
+    var benimInteger: Int? = null
+
+    // eger benimInteger null degilse onu yazdir 'let' (ya da baska bir sey yap vs)
+    benimInteger?.let {
+        println(it)
+    }
+
+    // eger benimInteger null degilse onun degerine 1 ekle ve yeniIntegerin degerine ata
+    // eger benimInteger null ise yeniInteger degerini 0 yap (elvis operator)
+    val yeniInteger = benimInteger?.let { it + 1 } ?: 0
+    println(yeniInteger)
+
+    // also
+    // once 30 yasindan buyuk sanatcilari al 'sonra' onların isimlerini yazdir (bir seyi yap ustune sunu da yap)
+    sanatcilar.filter { it.yas > 30 }.also { it.forEach { println(it.isim) } }
 }
 
 fun yazdigimiYazdir(string: String) {
